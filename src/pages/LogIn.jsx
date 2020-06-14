@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/logIn.css"
-import logo from "../images/logo.svg"
+// import logo from "../images/logo.svg"
+import logo from "../images/handsworld.png"
 import LogInForm from "../components/logInForm"
 
 

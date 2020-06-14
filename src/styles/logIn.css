@@ -1,7 +1,7 @@
 
 #header {
     background: linear-gradient( rgb(155, 112, 5), rgb(245, 192, 57));
-    height: 200px;
+    height: 180px;
     z-index: 1;
 }
 
@@ -10,7 +10,7 @@
     font-weight: 800;
     letter-spacing: 10px;
     text-align: center;
-    margin-top: -80px;
+    margin-top: -95px;
     position: relative;
     z-index: 2;
 }
@@ -21,6 +21,7 @@
 
 #logoImg {
     width: 180px;
+    margin-right: 5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

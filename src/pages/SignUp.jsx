@@ -7,6 +7,13 @@ import SignUpForm from "../components/signUpForm"
 
 
 class SignUp extends Component {
+    // constructor(props) {
+    //     super(props)
+    //     const state = {
+    //         step : 1
+    //     }
+    // }
+
     render() {
         return (
             <>
@@ -16,7 +23,8 @@ class SignUp extends Component {
                     <Link id="btnToLogIn" className="btn btn-outline-dark" to="/LogIn" >Ya tengo una cuenta</Link>
                 </nav>
                 <h1 id="registrate" >Crea tu cuenta</h1>
-                <SignUpForm />
+                {/* {this.state.step === 1 && <SignUpForm />} */}
+                <SignUpForm  />
             </>
         )
     }
