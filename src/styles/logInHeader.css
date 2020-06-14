@@ -19,7 +19,6 @@
     text-shadow: 5px 5px 5px black;
 }
 
-
 #logoImg {
     width: 180px;
 }
@@ -28,4 +27,36 @@
     #logoImg {
       animation: App-logo-spin infinite 20s linear;
     }
+}
+
+/* ----------------------------------- */
+
+#form {
+    /* border: 1px black solid; */
+    width: 400px;
+    padding: 20px;
+    margin: 10px auto;
+    box-shadow: 5px 5px 20px 1px black;
+    text-align: center;
+}
+
+#form input {
+    width: 250px;
+    outline-color: rgb(155, 112, 5);
+}
+
+#form p {
+    font-weight: bold;
+}
+
+#btnForm {
+    margin-top: 15px;
+    width: 80px;
+    background:  linear-gradient( rgb(155, 112, 5), rgb(245, 192, 57));
+}
+#links {
+    display: flex;
+    font-size: 12px;
+    margin: 8px 10px 0 10px ;
+    justify-content: space-between;
 }

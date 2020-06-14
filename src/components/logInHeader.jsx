@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/logInHeader.css"
 import logo from "../images/logo.svg"
+import LogInForm from "./logInForm"
 
 
 class LogInHeader extends Component {
@@ -12,9 +13,8 @@ class LogInHeader extends Component {
                     <img id="logoImg" src={logo} alt=""/>
                     <span id="brand" >Firsty</span>
                 </div>
-                <form action="" className="form">
-                    
-                </form>
+                <LogInForm />
+                
 
             </div>
         )
