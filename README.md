@@ -19,7 +19,10 @@ Es la página antes de entrar a la red social, deberá tener:
 Donde mandas tus datos para hacer una cuenta.
 
 >un formulario con los datos requeridos para crear cuenta
+  -pregunta de seguridad
+  -genero
 >todos los usuarios se guardaán en un json
+
 
 3. Feed
 

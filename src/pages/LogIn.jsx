@@ -1,17 +1,22 @@
-import React from 'react';
-// import logo from '../images/logo.svg';
-import '../General.css';
-import LogInPage from "../components/logInPage.jsx"
-import "bootstrap/dist/css/bootstrap.css"
+import React, { Component } from "react";
+import "../styles/logIn.css"
+import logo from "../images/logo.svg"
+import LogInForm from "../components/logInForm"
 
-function App() {
-  return (
-    <div>
-      <LogInPage />
 
-    </div>
-
-  );
+class LogIn extends Component {
+    render() {
+        return (
+            <div>
+                <nav id="header" className="navbar navbar-expands" ></nav>
+                <div id="title" >
+                    <img id="logoImg" src={logo} alt=""/>
+                    <span id="brand" >Friendly</span>
+                </div>
+                <LogInForm />
+            </div>
+        )
+    }
 }
 
-export default App;
+export default LogIn
