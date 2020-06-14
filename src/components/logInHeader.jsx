@@ -11,7 +11,7 @@ class LogInHeader extends Component {
                 <nav id="header" className="navbar navbar-expands" ></nav>
                 <div id="title" >
                     <img id="logoImg" src={logo} alt=""/>
-                    <span id="brand" >Firsty</span>
+                    <span id="brand" >Friendly</span>
                 </div>
                 <LogInForm />
                 
