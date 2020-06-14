@@ -1,0 +1,31 @@
+
+#header {
+    background: linear-gradient( rgb(155, 112, 5), rgb(245, 192, 57));
+    height: 200px;
+    z-index: 1;
+}
+
+#title {
+    font-size: 82px;
+    font-weight: 800;
+    letter-spacing: 10px;
+    text-align: center;
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+}
+
+#brand {
+    text-shadow: 5px 5px 5px black;
+}
+
+
+#logoImg {
+    width: 180px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #logoImg {
+      animation: App-logo-spin infinite 20s linear;
+    }
+}
