@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, setState } from 'react';
 import { Form, Col, InputGroup, Button  } from 'react-bootstrap';
 
 function SignUpForm() {
@@ -8,18 +8,32 @@ function SignUpForm() {
       const form = event.currentTarget;
       if (form.checkValidity() === false) {
         event.preventDefault();
+        console.log("handlesubmit");
+        
         event.stopPropagation();
       }
   
       setValidated(true);
     };
-  
+
+    const handleClick = (e) => {
+        console.log("button was clicked")
+    }
+
+    const handleChange = (e) => {
+        // useState({ 
+        //     [e.target.name]: e.target.value
+        // })
+        console.log({ value: e.target.value })
+    } 
+
+
     return (
         
         <div  className="container">
             <div className="row">
                 <div id="SignUpForm" className="col-6 offset-3">
-                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                    <Form noValidate validated={validated} onSubmit={handleSubmit} >
         
                         <Form.Row>
                             <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -28,9 +42,10 @@ function SignUpForm() {
                                 required
                                 type="text"
                                 placeholder="Nombre"
+                                onChange={handleChange}
                                 // defaultValue="Mark"
                             />
-                            <Form.Control.Feedback>¡Excelente!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Ingresa tu nombre</Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="4" controlId="validationCustom02">
                             <Form.Label>Apellido</Form.Label>
@@ -40,7 +55,7 @@ function SignUpForm() {
                                 placeholder="Apellido"
                                 // defaultValue="Otto"
                             />
-                            <Form.Control.Feedback>¡Genial!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Ingresa tu apellido</Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="4" controlId="validationCustomUsername">
                             <Form.Label>Usuario</Form.Label>
@@ -57,6 +72,9 @@ function SignUpForm() {
                                 <Form.Control.Feedback type="invalid">
                                 Por favor escoge un nombre de usuario.
                                 </Form.Control.Feedback>
+                                <Form.Control.Feedback >
+                                !Perfecto, esta disponible!
+                            </Form.Control.Feedback>
                             </InputGroup>
                             </Form.Group>
                         </Form.Row>
@@ -90,7 +108,7 @@ function SignUpForm() {
                             feedback="Tienes que aceptar para poder seguir."
                             />
                         </Form.Group>
-                        <Button id="btnSignUp" type="submit">Crear</Button>
+                        <Button id="btnSignUp" type="submit" onClick={handleClick} >Crear</Button>
                         </Form>
                 </div>
             </div>
