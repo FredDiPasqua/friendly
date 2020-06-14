@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "../styles/logInHeader.css"
+import "../styles/logInPage.css"
 import logo from "../images/logo.svg"
 import LogInForm from "./logInForm"
 
 
-class LogInHeader extends Component {
+class LogInPage extends Component {
     render() {
         return (
             <div>
@@ -14,11 +14,9 @@ class LogInHeader extends Component {
                     <span id="brand" >Friendly</span>
                 </div>
                 <LogInForm />
-                
-
             </div>
         )
     }
 }
 
-export default LogInHeader
+export default LogInPage
