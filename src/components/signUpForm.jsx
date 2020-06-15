@@ -3,28 +3,39 @@ import { Form, Col, InputGroup, Button  } from 'react-bootstrap';
 
 function SignUpForm() {
     const [validated, setValidated] = useState(false);
+    const [ data, setData ] = useState();
+    // data = {
+    //     firstname: "",
+    //     lastName: "",
+    //     userName: "",
+    //     email: "",
+    //     country: "",
+    //     city: ""
+    // }
   
     const handleSubmit = (event) => {
       const form = event.currentTarget;
+      event.preventDefault();
       if (form.checkValidity() === false) {
-        event.preventDefault();
+        // event.preventDefault();
         console.log("handlesubmit");
-        
         event.stopPropagation();
       }
-  
       setValidated(true);
     };
 
     const handleClick = (e) => {
         console.log("button was clicked")
+        console.log(data); 
     }
 
     const handleChange = (e) => {
-        // useState({ 
-        //     [e.target.name]: e.target.value
-        // })
+        setData({ 
+            ... data,
+            [e.target.name]: e.target.value
+        })
         console.log({ value: e.target.value })
+        console.log(data);
     } 
 
 
@@ -43,6 +54,7 @@ function SignUpForm() {
                                 type="text"
                                 placeholder="Nombre"
                                 onChange={handleChange}
+                                name="firstName"
                                 // defaultValue="Mark"
                             />
                             <Form.Control.Feedback type="invalid">Ingresa tu nombre</Form.Control.Feedback>
@@ -53,6 +65,8 @@ function SignUpForm() {
                                 required
                                 type="text"
                                 placeholder="Apellido"
+                                onChange={handleChange}
+                                name="lastName"
                                 // defaultValue="Otto"
                             />
                             <Form.Control.Feedback type="invalid">Ingresa tu apellido</Form.Control.Feedback>
@@ -68,6 +82,8 @@ function SignUpForm() {
                                 placeholder="Username"
                                 aria-describedby="inputGroupPrepend"
                                 required
+                                onChange={handleChange}
+                                name="userName"
                                 />
                                 <Form.Control.Feedback type="invalid">
                                 Por favor escoge un nombre de usuario.
@@ -81,21 +97,26 @@ function SignUpForm() {
                         <Form.Row>
                             <Form.Group as={Col} md="6" controlId="validationCustom03">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="@gmail.com" defaultValue="@gmail.com" required />
+                            <Form.Control 
+                                type="email" 
+                                placeholder="@gmail.com" 
+                                defaultValue="@gmail.com" 
+                                required onChange={handleChange}
+                                name="email"/>
                             <Form.Control.Feedback type="invalid">
                                 Por favor Ingresa tu Correo Electrónico.
                             </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="3" controlId="validationCustom04">
                             <Form.Label>Pais</Form.Label>
-                            <Form.Control type="text" placeholder="Pais" required />
+                            <Form.Control type="text" placeholder="Pais" required onChange={handleChange} name="country" />
                             <Form.Control.Feedback type="invalid">
                                 Por favor ingresa un Pais valido.
                             </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="3" controlId="validationCustom05">
                             <Form.Label>Ciudad</Form.Label>
-                            <Form.Control type="text" placeholder="Ciudad" required />
+                            <Form.Control type="text" placeholder="Ciudad" required onChange={handleChange} name="city" />
                             <Form.Control.Feedback type="invalid">
                                 Por favor ingresa una ciudad valida.
                             </Form.Control.Feedback>
