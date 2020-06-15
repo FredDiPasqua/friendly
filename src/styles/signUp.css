@@ -61,10 +61,17 @@
 
 /* ----------------------------------------------------------------------- */
 
+#form2 {
+    box-shadow: 2px 2px 20px black;
+    padding: 10px 0 10px 50px;
+    margin: 10px auto 0 auto;
+    width: 800px;
+}
+
 #avatarImg {
-    width: 200px;
+    width: 180px;
     display: inline-block;
-    margin-right: 20px;
+    margin: 0 auto;
 }
 
 #securityContainer {
@@ -75,5 +82,20 @@
 #securityContainer .inputs {
     width:300px;
 }
+
+#secretQuestion, #secretAnswer {
+    display: inline-block;
+    width:300px;
+    /* margin: 0 20px; */
+}
+
+#secretQuestion {
+    margin-left: 0px;
+}
+#secretAnswer {
+    margin-left: 45px;
+}
+
+
 
 

@@ -9,14 +9,19 @@ import SignUpForm2 from "../components/signUpForm2"
 
 class SignUp extends Component {
     state = { 
-        step: 2,
+        step: 1,
         form: {
             firstName: "",
             lastName: "",
             userName: "",
             email: "@gmail.com",
             country: "",
-            city: ""
+            city: "",
+            // password: "",
+            // saveQ: "",
+            // saveA: "",
+            // genre: "",
+            // pic: ""
         }
     }
 
