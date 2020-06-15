@@ -7,12 +7,17 @@ import SignUpForm from "../components/signUpForm"
 
 
 class SignUp extends Component {
-    // constructor(props) {
-    //     super(props)
-    //     const state = {
-    //         step : 1
-    //     }
-    // }
+    state = { form: {} }
+
+    handleChange = e => {
+        this.setState({
+            form: {
+                ... this.state.form,
+                [e.target.name]: e.target.value
+
+            }
+        })
+    }
 
     render() {
         return (
@@ -24,7 +29,7 @@ class SignUp extends Component {
                 </nav>
                 <h1 id="registrate" >Crea tu cuenta</h1>
                 {/* {this.state.step === 1 && <SignUpForm />} */}
-                <SignUpForm  />
+                <SignUpForm onChange={this.handleChange} />
             </>
         )
     }

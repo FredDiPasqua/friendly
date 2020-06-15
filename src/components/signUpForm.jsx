@@ -1,9 +1,9 @@
 import React, { useState, setState } from 'react';
 import { Form, Col, InputGroup, Button  } from 'react-bootstrap';
 
-function SignUpForm() {
+function SignUpForm(props) {
     const [validated, setValidated] = useState(false);
-    const [ data, setData ] = useState();
+    const [ data, setData ] = useState({});
     // data = {
     //     firstname: "",
     //     lastName: "",
@@ -29,14 +29,14 @@ function SignUpForm() {
         console.log(data); 
     }
 
-    const handleChange = (e) => {
-        setData({ 
-            ... data,
-            [e.target.name]: e.target.value
-        })
-        console.log({ value: e.target.value })
-        console.log(data);
-    } 
+    // const handleChange = (e) => {
+    //     setData({ 
+    //         ... data,
+    //         [e.target.name]: e.target.value
+    //     })
+    //     console.log({ value: e.target.value })
+    //     console.log(data);
+    // } 
 
 
     return (
@@ -53,7 +53,7 @@ function SignUpForm() {
                                 required
                                 type="text"
                                 placeholder="Nombre"
-                                onChange={handleChange}
+                                onChange={props.onChange}
                                 name="firstName"
                                 // defaultValue="Mark"
                             />
@@ -65,7 +65,7 @@ function SignUpForm() {
                                 required
                                 type="text"
                                 placeholder="Apellido"
-                                onChange={handleChange}
+                                onChange={props.onChange}
                                 name="lastName"
                                 // defaultValue="Otto"
                             />
@@ -82,7 +82,7 @@ function SignUpForm() {
                                 placeholder="Username"
                                 aria-describedby="inputGroupPrepend"
                                 required
-                                onChange={handleChange}
+                                onChange={props.onChange}
                                 name="userName"
                                 />
                                 <Form.Control.Feedback type="invalid">
@@ -101,7 +101,7 @@ function SignUpForm() {
                                 type="email" 
                                 placeholder="@gmail.com" 
                                 defaultValue="@gmail.com" 
-                                required onChange={handleChange}
+                                required onChange={props.onChange}
                                 name="email"/>
                             <Form.Control.Feedback type="invalid">
                                 Por favor Ingresa tu Correo Electrónico.
@@ -109,14 +109,14 @@ function SignUpForm() {
                             </Form.Group>
                             <Form.Group as={Col} md="3" controlId="validationCustom04">
                             <Form.Label>Pais</Form.Label>
-                            <Form.Control type="text" placeholder="Pais" required onChange={handleChange} name="country" />
+                            <Form.Control type="text" placeholder="Pais" required onChange={props.onChange} name="country" />
                             <Form.Control.Feedback type="invalid">
                                 Por favor ingresa un Pais valido.
                             </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="3" controlId="validationCustom05">
                             <Form.Label>Ciudad</Form.Label>
-                            <Form.Control type="text" placeholder="Ciudad" required onChange={handleChange} name="city" />
+                            <Form.Control type="text" placeholder="Ciudad" required onChange={props.onChange} name="city" />
                             <Form.Control.Feedback type="invalid">
                                 Por favor ingresa una ciudad valida.
                             </Form.Control.Feedback>
