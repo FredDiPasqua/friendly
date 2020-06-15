@@ -9,7 +9,7 @@ import SignUpForm2 from "../components/signUpForm2"
 
 class SignUp extends Component {
     state = { 
-        step: 1,
+        step: 2,
         form: {
             firstName: "",
             lastName: "",
@@ -48,8 +48,21 @@ class SignUp extends Component {
             return <SignUpForm onChange={this.handleChange} onClick={this.handleClick} formValues={this.state.form} />
         }
         if (this.state.step === 2) {
-            return <SignUpForm2 />
+            return <SignUpForm2  onChange={this.handleChange} onClick={this.handleClick} />
         }
+        // if (this.state.step === 3) {
+        //     return (
+        //         <h1>What??</h1>,
+        //         setTimeout(() => {
+        //             <div className="container">
+        //                 <h1>Muy Bien, has creado tu cuenta, ahora inicia sesión</h1>
+        //                 <Link to="/logIn" >Inicia sesión</Link>
+        //             </div>
+        //         },5000)
+            
+        //     )
+        // }
+
     }
 
 

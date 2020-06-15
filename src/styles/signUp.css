@@ -98,6 +98,12 @@
     margin-left: 45px;
 }
 
+#inputPassword1Green {
+    border-color: green;
+}
+#inputPassword1Red {
+    border-color: red;
+}
 
 
 
