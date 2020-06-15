@@ -13,16 +13,21 @@ class SignUpForm2 extends Component {
                         <div>
                             <Form>
                             <Form.Group>
-                                <Form.File id="exampleFormControlFile1" label="Example file input" />
+                                <Form.File id="exampleFormControlFile1" label="Sube tu foto de perfil" />
                             </Form.Group>
                             </Form>
                         </div>
                         <div>
-                            <Form.Check inline label="Hombre" type="radio" aria-label="radio 1" />
-                            <Form.Check inline label="Mujer" type="radio" aria-label="radio 1" />
-                            <Form.Check inline label="otro" type="radio" aria-label="radio 1" />
+                            <Form.Check type="radio" inline label="Hombre" name="formHorizontalRadios" 
+                              id="formHorizontalRadios1"
+                            />
+                            <Form.Check type="radio" inline label="Mujer" name="formHorizontalRadios"
+                              id="formHorizontalRadios2"
+                            />
+                            <Form.Check type="radio" inline label="Otro" name="formHorizontalRadios"
+                              id="formHorizontalRadios3"
+                            />
                         </div>
-                        
                     </div>
                     <div className="col-5">
                     <div id="securityContainer" >
@@ -50,7 +55,7 @@ class SignUpForm2 extends Component {
                                 />
                                 
                                 <Form.Text id="passwordHelpBlock" muted>
-                                    Tu contraseña debe ser identica a la pusiste arriba.
+                                    Tu contraseña debe ser igual a la que pusiste arriba.
                                 </Form.Text>
                             </div>
                             <br/>
@@ -60,7 +65,7 @@ class SignUpForm2 extends Component {
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <hr className="my-1" />
+                        <hr className="my-0" />
                         <div id="secretQuestion" >
                             <Form.Label className="mr-sm-2" htmlFor="inlineFormCustomSelect">
                             Escoge una pregunta de seguridad
@@ -72,11 +77,11 @@ class SignUpForm2 extends Component {
                             custom
                             >
                             <option value="0">Escoge...</option>
-                            <option value="1">¿Cual fue el nombre de tu primer mascota?</option>
-                            <option value="2">¿Cuales son los apellidos de tu abuelo paterno?</option>
-                            <option value="3">¿Cual era tu juego favorito en la niñez?</option>
+                            <option value="1">¿Cuál fue el nombre de tu primer mascota?</option>
+                            <option value="2">¿Cuáles son los apellidos de tu abuelo paterno?</option>
+                            <option value="3">¿Cuál era tu juego favorito en la niñez?</option>
                             <option value="4">¿El nombre de tu primer pareja?</option>
-                            <option value="5">¿Cual era tu apodo de pequeño?</option>
+                            <option value="5">¿Cuál era tu apodo de pequeño?</option>
                             </Form.Control>
                         </div>
                         <div id="secretAnswer" >

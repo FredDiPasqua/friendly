@@ -46,10 +46,11 @@
 /* ----------------------------------------------------- */
 
 #SignUpForm {
+    background: white;
     box-shadow: 2px 2px 20px black;
     padding: 20px;
     margin: 50px auto;
-
+    
 }
 
 #btnSignUp{
@@ -62,16 +63,17 @@
 /* ----------------------------------------------------------------------- */
 
 #form2 {
+    background: white;
     box-shadow: 2px 2px 20px black;
-    padding: 10px 0 10px 50px;
+    padding: 10px 0 15px 50px;
     margin: 10px auto 0 auto;
     width: 800px;
 }
 
 #avatarImg {
-    width: 180px;
+    width: 170px;
     display: inline-block;
-    margin: 0 auto;
+    margin: 0  0  0 50px;
 }
 
 #securityContainer {

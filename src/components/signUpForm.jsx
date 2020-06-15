@@ -21,21 +21,6 @@ function SignUpForm(props) {
 
     };
 
-    // const handleClick = (e) => {
-    //     console.log("button was clicked")
-    //     console.log(data); 
-    // }
-
-    // const handleChange = (e) => {
-    //     setData({ 
-    //         ... data,
-    //         [e.target.name]: e.target.value
-    //     })
-    //     console.log({ value: e.target.value })
-    //     console.log(data);
-    // } 
-
-
     return (
         
         <div  className="container">
