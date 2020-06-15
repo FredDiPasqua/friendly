@@ -14,6 +14,11 @@ function SignUpForm(props) {
         event.stopPropagation();
       }
       setValidated(true);
+
+      if (validated) {
+          props.onClick()
+      }
+
     };
 
     // const handleClick = (e) => {
@@ -125,7 +130,7 @@ function SignUpForm(props) {
                             feedback="Tienes que aceptar para poder seguir."
                             />
                         </Form.Group>
-                        <Button id="btnSignUp" type="submit" onClick={props.onClick} >Crear</Button>
+                        <Button id="btnSignUp" type="submit"  >Crear</Button>
                         </Form>
                 </div>
             </div>
