@@ -7,17 +7,30 @@ import SignUpForm from "../components/signUpForm"
 
 
 class SignUp extends Component {
-    state = { form: {} }
+    state = { form: {
+        firstName: "",
+        lastName: "",
+        userName: "",
+        email: "@gmail.com",
+        country: "",
+        city: ""
+    } }
 
     handleChange = e => {
         this.setState({
             form: {
                 ... this.state.form,
                 [e.target.name]: e.target.value
-
+                
             }
         })
+        console.log(this.state.form);
     }
+
+    handleClick = e => {
+        console.log("Ya entró")
+    }
+
 
     render() {
         return (
@@ -29,7 +42,7 @@ class SignUp extends Component {
                 </nav>
                 <h1 id="registrate" >Crea tu cuenta</h1>
                 {/* {this.state.step === 1 && <SignUpForm />} */}
-                <SignUpForm onChange={this.handleChange} />
+                <SignUpForm onChange={this.handleChange} onClick={this.handleClick} formValues={this.state.form} />
             </>
         )
     }

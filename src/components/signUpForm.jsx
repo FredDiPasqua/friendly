@@ -1,17 +1,9 @@
-import React, { useState, setState } from 'react';
+import React, { useState } from 'react';
 import { Form, Col, InputGroup, Button  } from 'react-bootstrap';
 
 function SignUpForm(props) {
     const [validated, setValidated] = useState(false);
-    const [ data, setData ] = useState({});
-    // data = {
-    //     firstname: "",
-    //     lastName: "",
-    //     userName: "",
-    //     email: "",
-    //     country: "",
-    //     city: ""
-    // }
+    // const [ data, setData ] = useState({});
   
     const handleSubmit = (event) => {
       const form = event.currentTarget;
@@ -24,10 +16,10 @@ function SignUpForm(props) {
       setValidated(true);
     };
 
-    const handleClick = (e) => {
-        console.log("button was clicked")
-        console.log(data); 
-    }
+    // const handleClick = (e) => {
+    //     console.log("button was clicked")
+    //     console.log(data); 
+    // }
 
     // const handleChange = (e) => {
     //     setData({ 
@@ -45,7 +37,6 @@ function SignUpForm(props) {
             <div className="row">
                 <div id="SignUpForm" className="col-6 offset-3">
                     <Form noValidate validated={validated} onSubmit={handleSubmit} >
-        
                         <Form.Row>
                             <Form.Group as={Col} md="4" controlId="validationCustom01">
                             <Form.Label>Nombre</Form.Label>
@@ -55,6 +46,7 @@ function SignUpForm(props) {
                                 placeholder="Nombre"
                                 onChange={props.onChange}
                                 name="firstName"
+                                value= {props.formValues.firstName}
                                 // defaultValue="Mark"
                             />
                             <Form.Control.Feedback type="invalid">Ingresa tu nombre</Form.Control.Feedback>
@@ -67,6 +59,7 @@ function SignUpForm(props) {
                                 placeholder="Apellido"
                                 onChange={props.onChange}
                                 name="lastName"
+                                value= {props.formValues.lastName}
                                 // defaultValue="Otto"
                             />
                             <Form.Control.Feedback type="invalid">Ingresa tu apellido</Form.Control.Feedback>
@@ -84,6 +77,7 @@ function SignUpForm(props) {
                                 required
                                 onChange={props.onChange}
                                 name="userName"
+                                value= {props.formValues.userName}
                                 />
                                 <Form.Control.Feedback type="invalid">
                                 Por favor escoge un nombre de usuario.
@@ -100,23 +94,25 @@ function SignUpForm(props) {
                             <Form.Control 
                                 type="email" 
                                 placeholder="@gmail.com" 
-                                defaultValue="@gmail.com" 
-                                required onChange={props.onChange}
-                                name="email"/>
+                                // defaultValue="@gmail.com" 
+                                required 
+                                onChange={props.onChange}
+                                name="email"
+                                value= {props.formValues.email}/>
                             <Form.Control.Feedback type="invalid">
                                 Por favor Ingresa tu Correo Electrónico.
                             </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="3" controlId="validationCustom04">
                             <Form.Label>Pais</Form.Label>
-                            <Form.Control type="text" placeholder="Pais" required onChange={props.onChange} name="country" />
+                            <Form.Control type="text" placeholder="Pais" required onChange={props.onChange} name="country" value= {props.formValues.country} />
                             <Form.Control.Feedback type="invalid">
                                 Por favor ingresa un Pais valido.
                             </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="3" controlId="validationCustom05">
                             <Form.Label>Ciudad</Form.Label>
-                            <Form.Control type="text" placeholder="Ciudad" required onChange={props.onChange} name="city" />
+                            <Form.Control type="text" placeholder="Ciudad" required onChange={props.onChange} name="city" value= {props.formValues.city}/>
                             <Form.Control.Feedback type="invalid">
                                 Por favor ingresa una ciudad valida.
                             </Form.Control.Feedback>
@@ -129,7 +125,7 @@ function SignUpForm(props) {
                             feedback="Tienes que aceptar para poder seguir."
                             />
                         </Form.Group>
-                        <Button id="btnSignUp" type="submit" onClick={handleClick} >Crear</Button>
+                        <Button id="btnSignUp" type="submit" onClick={props.onClick} >Crear</Button>
                         </Form>
                 </div>
             </div>
